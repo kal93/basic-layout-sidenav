@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LeftMenuComponent } from './components/left-menu/left-menu.component';
+import { TableComponent } from './table/table/table.component';
 
 @NgModule({
   imports: [ 
@@ -26,7 +27,8 @@ import { LeftMenuComponent } from './components/left-menu/left-menu.component';
     AppComponent, 
     HelloComponent,
     HeaderComponent,
-    LeftMenuComponent
+    LeftMenuComponent,
+    TableComponent
   ],
   providers: [ SidenavService ],
   bootstrap:    [ AppComponent ]
