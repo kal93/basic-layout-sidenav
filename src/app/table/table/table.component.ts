@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'app-table',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TableComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor() { }
 
@@ -16,7 +18,10 @@ export class TableComponent implements OnInit {
   }
 
   loadMore() {
-    this.dataSource = ELEMENT_DATA1;
+    let a = ELEMENT_DATA1;
+    this.dataSource.data = this.dataSource.data.concat(a);
+    this.dataSource._updateChangeSubscription();
+    console.log(this.dataSource.data);
   }
 
 }
